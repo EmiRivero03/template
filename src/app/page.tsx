@@ -1,8 +1,8 @@
-import { LoginForm, SignupForm } from "@/components";
+import { LoginForm, SignupForm } from '@/components';
 
 export default async function Home() {
   return (
-    <main className="w-full gap-2 flex min-h-dvh items-center justify-center">
+    <main className="flex min-h-dvh w-full items-center justify-center gap-2">
       <LoginForm />
       <SignupForm />
     </main>

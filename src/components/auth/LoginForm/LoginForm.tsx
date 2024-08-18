@@ -1,4 +1,4 @@
-import { signOut, signIn } from "@/auth";
+import { signOut, signIn } from '@/auth';
 import {
   Card,
   CardContent,
@@ -6,11 +6,11 @@ import {
   CardHeader,
   CardDescription,
   CardFooter,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import Link from 'next/link';
 
 export const LoginForm = async () => {
   return (

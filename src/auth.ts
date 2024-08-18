@@ -1,15 +1,15 @@
-import NextAuth, { CredentialsSignin } from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import Google from "next-auth/providers/google";
-import { Adapter } from "next-auth/adapters";
-import Credentials from "next-auth/providers/credentials";
-import { prisma } from "./lib/prisma";
-import bcrypt from "bcryptjs";
+import NextAuth, { CredentialsSignin } from 'next-auth';
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import Google from 'next-auth/providers/google';
+import { Adapter } from 'next-auth/adapters';
+import Credentials from 'next-auth/providers/credentials';
+import { prisma } from './lib/prisma';
+import bcrypt from 'bcryptjs';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma) as Adapter,
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
   },
   providers: [
     Google({
@@ -25,10 +25,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
     }),
     Credentials({
-      name: "Credentials",
+      name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" },
+        email: { label: 'Email', type: 'text', placeholder: 'jsmith' },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
         console.log({ credentials });
@@ -39,7 +39,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         });
 
         if (!userFound) {
-          throw new CredentialsSignin("User Not Found");
+          throw new CredentialsSignin('User Not Found');
         }
 
         const passwordMatch = await bcrypt.compare(
@@ -48,7 +48,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         );
 
         if (!passwordMatch) {
-          throw new CredentialsSignin("Password Not Match");
+          throw new CredentialsSignin('Password Not Match');
         }
 
         return {
@@ -64,7 +64,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (user) {
         token.id = user.id;
       }
-      if (trigger === "update") {
+      if (trigger === 'update') {
         return { ...token, ...session.user };
       }
       return { ...token, ...user };

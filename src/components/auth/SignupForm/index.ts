@@ -1,1 +1,1 @@
-export * from "@/components/auth/SignupForm/SignupForm";
+export * from '@/components/auth/SignupForm/SignupForm';

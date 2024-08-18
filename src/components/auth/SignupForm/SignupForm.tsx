@@ -5,11 +5,11 @@ import {
   CardHeader,
   CardDescription,
   CardFooter,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Separator } from '@/components/ui/separator';
 
 export const SignupForm = () => {
   return (
@@ -40,8 +40,8 @@ export const SignupForm = () => {
             </div>
           </div>
         </CardContent>
-        <CardFooter className="w-full flex flex-col gap-4">
-            {/* TODO: add sign up action */}
+        <CardFooter className="flex w-full flex-col gap-4">
+          {/* TODO: add sign up action */}
           <Button className="w-full">Sign Up</Button>
 
           <Separator className="my-1.5" />
