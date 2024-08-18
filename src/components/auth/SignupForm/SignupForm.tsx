@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
-export const RegisterForm = () => {
+export const SignupForm = () => {
   return (
     <Card className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
       <CardHeader>
