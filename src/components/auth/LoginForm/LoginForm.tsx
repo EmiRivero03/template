@@ -69,8 +69,6 @@ export const LoginForm = async () => {
       </CardContent>
       <CardFooter>
         <Button className="w-full">Sign In</Button>
-
-        <Link href=""></Link>
       </CardFooter>
     </Card>
   );
